@@ -1,9 +1,9 @@
 # Intellij Idea Files #
 *.iml
-./.idea/
+./.idea
 
 # Target Files #
-./target/
+./target
 
 # Package Files #
 *.jar
