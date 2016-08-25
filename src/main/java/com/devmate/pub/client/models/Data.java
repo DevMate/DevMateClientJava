@@ -37,24 +37,21 @@ public class Data<OBJ, META> {
     }
 
     /**
-     *
-     * @return
+     * @return current instance of OBJ class
      */
     public OBJ getData() {
         return data;
     }
 
     /**
-     *
-     * @return
+     * @return current instance of META class
      */
     public META getMeta() {
         return meta;
     }
 
     /**
-     *
-     * @return
+     * @return list of errors
      */
     public List<Error> getErrors() {
         if (errors != null) {
