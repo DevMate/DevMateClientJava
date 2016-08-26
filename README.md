@@ -14,13 +14,13 @@ How to include library to your project?
 <dependency>
     <groupId>com.devmate.pub</groupId>
     <artifactId>client</artifactId>
-    <version>1.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
 - for Gradle
 ```groovy
-compile group: 'com.devmate.pub', name: 'client', version: '1.0'
+compile group: 'com.devmate.pub', name: 'client', version: '1.0.1'
 ```
 
 ## Usage Example
