@@ -14,6 +14,7 @@ public interface CustomersApi {
      * @param id target customer ID.
      * @return data container with customer and meta data.
      * @throws com.devmate.pub.client.exceptions.DevMateNotFoundException if customer hasn't been found.
+     * @throws java.lang.IllegalArgumentException if given id is negative or 0.
      * @throws com.devmate.pub.client.exceptions.DevMateClientErrorException on other client errors.
      * @throws com.devmate.pub.client.exceptions.DevMateServerErrorException on server errors.
      */
