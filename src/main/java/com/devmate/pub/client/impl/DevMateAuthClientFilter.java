@@ -14,7 +14,7 @@ public final class DevMateAuthClientFilter implements ClientRequestFilter {
 
     public DevMateAuthClientFilter(String token) {
         if (isNullOrEmpty(token)) {
-            throw new IllegalArgumentException("Given token is null or empty!");
+            throw new IllegalArgumentException("Given token is null or empty.");
         }
         this.token = token;
     }

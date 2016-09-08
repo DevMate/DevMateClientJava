@@ -63,7 +63,7 @@ public final class ObjectMapperProvider implements ContextResolver<ObjectMapper>
             } else if (token == JsonToken.VALUE_NUMBER_INT) {
                 return toDate(p.getLongValue());
             }
-            throw ctxt.wrongTokenException(p, JsonToken.VALUE_STRING, "Expected a string or numeric value");
+            throw ctxt.wrongTokenException(p, JsonToken.VALUE_STRING, "Expected a string or numeric value.");
         }
 
         private static Date toDate(long secondsSinceEpoch) {

@@ -29,7 +29,7 @@ public class DefaultLicensesApi extends AbstractApi implements LicensesApi {
         LOG.debug("Reset first activation by key : ", activationKey);
 
         if (isNullOrEmpty(activationKey)) {
-            throw new IllegalArgumentException("Given activation key is null or empty");
+            throw new IllegalArgumentException("Given activation key is null or empty.");
         }
 
         target()

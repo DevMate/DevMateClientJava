@@ -43,6 +43,10 @@ public class DefaultCustomersApi extends AbstractApi implements CustomersApi {
     @Override
     public Data<Customer, CustomersMeta> getCustomerById(int id) {
         LOG.debug("Get customer by id : {}", id);
+        if (id <= 0) {
+            throw new IllegalArgumentException("Id must not be negative or 0. Given : " + id);
+        }
+
         return target()
                 .path(idToPath(id))
                 .request(APPLICATION_JSON_TYPE)
@@ -62,7 +66,7 @@ public class DefaultCustomersApi extends AbstractApi implements CustomersApi {
         LOG.debug("Create customer : ", customer);
         return target()
                 .request(APPLICATION_JSON_TYPE)
-                .post(json(Data.of(checkNotNull(customer, "Given customer is null"))), CUSTOMER_TYPE);
+                .post(json(Data.of(checkNotNull(customer, "Given customer is null."))), CUSTOMER_TYPE);
     }
 
     @Override
@@ -70,7 +74,7 @@ public class DefaultCustomersApi extends AbstractApi implements CustomersApi {
         LOG.debug("Update customer : ", customer);
         customer = checkNotNull(customer, "Given customer is null");
         return target()
-                .path(idToPath(checkNotNull(customer.getId(), "Given customer id is null")))
+                .path(idToPath(checkNotNull(customer.getId(), "Given customer id is null.")))
                 .request(APPLICATION_JSON_TYPE)
                 .put(json(Data.of(customer)), CUSTOMER_TYPE);
     }
@@ -82,7 +86,7 @@ public class DefaultCustomersApi extends AbstractApi implements CustomersApi {
                 .path(idToPath(customerId))
                 .path(LICENSES_PATH)
                 .request(APPLICATION_JSON_TYPE)
-                .post(json(Data.of(checkNotNull(license, "Given license is null"))), LICENSE_TYPE);
+                .post(json(Data.of(checkNotNull(license, "Given license is null."))), LICENSE_TYPE);
     }
 
     private WebTarget targetWithQueryParams(CustomersQueryParams params) {
