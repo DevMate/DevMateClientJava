@@ -219,6 +219,15 @@ public class DefaultCustomersApiTest extends BaseIntegrationTest {
                         .userName("Test User")
                         .note("Test Note")
                         .timestamp(DATE)
+                        .id(1)
+                        .licenseId(1L)
+                        .activationId(1L)
+                        .activationName("Act Name")
+                        .activationEmail("act@mail.test")
+                        .offlineLicense("Offline")
+                        .productName("Test Product")
+                        .identifiers("aa:aa:aa:aa:aa:aa")
+                        .deactivated(true)
                         .build()));
     }
 }
