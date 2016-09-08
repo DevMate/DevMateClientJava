@@ -11,7 +11,7 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 
 public class DefaultDevMateClient implements DevMateClient {
-    private static final Logger LOG = LoggerFactory.getLogger(DefaultLicensesApi.class);
+    private static final Logger LOG = LoggerFactory.getLogger(DefaultDevMateClient.class);
     private final Client client;
     private final CustomersApi customersApi;
     private final LicensesApi licensesApi;
