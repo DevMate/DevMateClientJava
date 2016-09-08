@@ -42,7 +42,7 @@ public final class ObjectMapperProvider implements ContextResolver<ObjectMapper>
         return OBJECT_MAPPER;
     }
 
-    private static class UnixTimestampSerializer extends JsonSerializer<Date> {
+    public static class UnixTimestampSerializer extends JsonSerializer<Date> {
         @Override
         public void serialize(Date value, JsonGenerator gen, SerializerProvider serializers) throws IOException {
             gen.writeNumber(toSecondsSinceEpoch(value));
@@ -53,7 +53,7 @@ public final class ObjectMapperProvider implements ContextResolver<ObjectMapper>
         }
     }
 
-    private static class UnixTimestampDeserializer extends JsonDeserializer<Date> {
+    public static class UnixTimestampDeserializer extends JsonDeserializer<Date> {
         @Override
         public Date deserialize(final JsonParser p, final DeserializationContext ctxt) throws IOException {
             final JsonToken token = p.getCurrentToken();
@@ -68,6 +68,20 @@ public final class ObjectMapperProvider implements ContextResolver<ObjectMapper>
 
         private static Date toDate(long secondsSinceEpoch) {
             return new Date(secondsSinceEpoch * 1000);
+        }
+    }
+
+    public static class NumericBooleanSerializer extends JsonSerializer<Boolean> {
+        @Override
+        public void serialize(Boolean value, JsonGenerator gen, SerializerProvider serializers) throws IOException {
+            gen.writeNumber(value ? 1 : 0);
+        }
+    }
+
+    public static class NumericBooleanDeserializer extends JsonDeserializer<Boolean> {
+        @Override
+        public Boolean deserialize(final JsonParser p, final DeserializationContext ctxt) throws IOException {
+            return p.getIntValue() != 0;
         }
     }
 }
