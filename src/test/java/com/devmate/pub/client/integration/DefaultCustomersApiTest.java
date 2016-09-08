@@ -57,6 +57,16 @@ public class DefaultCustomersApiTest extends BaseIntegrationTest {
                 .withHeader(AUTHORIZATION, new ContainsPattern(TOKEN)));
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void getCustomerByNegativeId() throws Exception {
+        testDevMateClient().customers().getCustomerById(-1);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void getCustomerBy0Id() throws Exception {
+        testDevMateClient().customers().getCustomerById(0);
+    }
+
     @Test(expected = DevMateNotFoundException.class)
     public void getNonExistingCustomerById() throws Exception {
         Data<Customer, CustomersMeta> data = Data.errors(Arrays.asList(new Error("some", "error")));
