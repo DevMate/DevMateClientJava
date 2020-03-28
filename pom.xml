@@ -21,7 +21,7 @@
 
         <dependency.slf4j>1.7.12</dependency.slf4j>
         <dependency.guava>18.0</dependency.guava>
-        <dependency.jackson>2.6.0</dependency.jackson>
+        <dependency.jackson>2.10.3</dependency.jackson>
         <dependency.jersey>2.19</dependency.jersey>
 
         <dependency.junit>4.12</dependency.junit>
