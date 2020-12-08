@@ -24,7 +24,7 @@
         <dependency.jackson>2.6.0</dependency.jackson>
         <dependency.jersey>2.19</dependency.jersey>
 
-        <dependency.junit>4.12</dependency.junit>
+        <dependency.junit>4.13.1</dependency.junit>
         <dependency.hamcrest>1.3</dependency.hamcrest>
         <dependency.mockito>1.10.19</dependency.mockito>
         <dependency.wiremock>2.1.10</dependency.wiremock>
